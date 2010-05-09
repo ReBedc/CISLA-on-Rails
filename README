@@ -1,0 +1,17 @@
+Curso ISLA: Desarrollo de aplicaciones web con Ruby on Rails
+
+   Contenido del repositorio:
+
+   - Cajero.rb: Script realizado durante el curso.
+   - ToDo: Aplicación Rails comenzada en el curso y a la que se le han añadido los siguientes cambios:
+      · Una tarea tiene que tener una prioridad.
+      · Gema Acts-as-taggable-on para añadir tags a las tareas.
+         Cambios en new.html.erb, edit.html.erb y _form.html.erb, para añadir, modificar,eliminar y mostrar tags.
+      · Gema Paperclip para añadir una imagen a los proyectos.
+         Cambios en new.html.erb, edit.html.erb y show.html.erb, para añadir, modificar,eliminar y mostrar las imágenes.
+      · Gema Searchlogic para:
+         →  Ordenar las tareas por prioridades, y mostrar los proyectos los por orden alfabético.
+               Cambios en el controlador de proyectos para el orden alfabético, y en el index.html.erb para ordenar las tareas.
+         →  Realizar búsquedas de tareas en un proyecto, por descripción y prioridad.
+               Cambios en el index.html.erb para ordenar las tareas.
+      Para el uso de todas las gemas se han introducido cambios en cada uno de los controladores correspondientes a cada clase.

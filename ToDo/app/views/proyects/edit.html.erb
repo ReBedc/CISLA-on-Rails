@@ -1,0 +1,17 @@
+<% content_for :title do %> Editing proyect<% end %>
+
+<% form_for (@proyect), :url => proyect_path, :html => { :multipart => true } do |f| %>
+
+  <%= f.error_messages %>
+  <%= f.file_field :avatar %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @proyect %> |
+<%= link_to 'Back', proyects_path %>

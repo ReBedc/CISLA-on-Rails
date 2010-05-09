@@ -1,0 +1,18 @@
+<% content_for :title do %> Priority<% end %>
+<p> 
+  <b>Value:</b>
+  <%=h @priority.value %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @priority.name %>
+</p>
+
+<p>
+  <b>Color:</b>
+  <%=h @priority.color %>
+</p>
+
+<%= link_to 'Edit', edit_priority_path(@priority) %> |
+<%= link_to 'Back', priorities_path %>

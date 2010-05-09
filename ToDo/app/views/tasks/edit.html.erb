@@ -1,0 +1,5 @@
+<% content_for :title do %> Editing task<% end %>
+
+<%=render :partial => 'form', :locals => {:button_name => "Update"} %>
+
+<%= link_to 'Show', proyect_task_path(@proyect, @task) %>

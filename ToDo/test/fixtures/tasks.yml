@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  description: MyString
+  due_date: 2010-05-07 17:18:52
+  notes: MyText
+  proyect: 
+
+two:
+  description: MyString
+  due_date: 2010-05-07 17:18:52
+  notes: MyText
+  proyect: 

@@ -1,0 +1,57 @@
+<% content_for :title do %> Listing tasks<% end %>
+
+<table class ="table">
+  <tr>
+    <th>Description</th>
+    <th>Due date</th>
+    <th>Notes</th>
+    <th>Proyect</th>
+    <th>Priority</th>
+    <th>Tags</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <h3>Finding tasks</h3>
+
+<% form_for @search do |f| %>
+  <p>
+    <%= f.label :description_like, "Description" %><br />
+    <%= f.text_field :description_like %>
+  </p>
+  <p>
+    <%= f.label :priority_id_equals, "Priority" %><br />
+    <%= f.collection_select :priority_id_equals, Priority.all, :id, :value, :include_blank => true %>
+  </p>
+  <p>
+    <%= f.submit "Submit" %>
+<% end %>
+<br>
+
+<% @tasks.each do |task| %>
+  <tr>
+    <td><%=h task.description %></td>
+    <td><%=h task.due_date %></td>
+    <td><%=h task.notes %></td>
+    <td><%=h task.proyect.name %></td>
+    <td><%=h task.priority.name %></td>
+    <td><%=h task.tags %></td>
+    <td><%= link_to 'Show', proyect_task_path(@proyect, task) %></td>
+    <td><%= link_to 'Edit', edit_proyect_task_path(@proyect, task) %></td>
+    <td><%= link_to 'Destroy', proyect_task_path(@proyect, task), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+
+</table>
+
+<p>
+  Sort by: <br>
+  <%= order @search, :by => :priority_value %>
+</p>
+
+<br />
+
+<%= link_to 'New task', new_proyect_task_path(@proyect) %> | 
+<%= link_to 'Show all', proyect_tasks_path(@proyect, @task) %>
+

@@ -1,0 +1,28 @@
+<% content_for :title do %> Task<% end %>
+<p>
+  <b>Description:</b>
+  <%=h @task.description %>
+</p>
+
+<p>
+  <b>Due date:</b>
+  <%=h @task.due_date %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%=h @task.notes %>
+</p>
+
+<p>
+  <b>Proyect:</b>
+  <%=h @task.proyect.name %>
+</p>
+<p>
+  <b>Tags:</b>
+  <%=h @task.tag_list %>
+</p>
+
+
+<%= link_to 'Edit', edit_proyect_task_path(@proyect, @task) %> |
+<%= link_to 'Back', proyect_tasks_path(@proyect) %>

@@ -1,0 +1,23 @@
+<% content_for :title do %> Listing proyects<% end %>
+
+<table class ="table">
+  <tr>
+    <th>Name</th>
+    <th></th>
+  </tr>
+
+<% @proyects.each do |proyect| %>
+  <tr>
+    <td><%=h proyect.name %></td>
+    <td><%= link_to 'Show', proyect %> |
+        <%= link_to 'Edit', edit_proyect_path(proyect) %> |
+        <%= link_to 'Destroy', proyect, :confirm => 'Are you sure?', :method => :delete %> |
+        <%= link_to 'Tasks', proyect_tasks_path(proyect) %></td>
+  </tr>
+<% end %>
+</table>
+
+
+<br />
+
+<%= link_to 'New proyect', new_proyect_path %>
